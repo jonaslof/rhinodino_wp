@@ -25,8 +25,9 @@
 	{
 		$args = array(
 			'container'		=> false, 
-			'menu_class'	=> 'nav nav-tabs', 
+			'menu_class'	=> 'main-menu', 
 			'menu_id'		=> $id,
+			'items_wrap'    => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 			'echo'			=> false,
 			'depth'			=> 1
 		);
@@ -49,6 +50,7 @@
 	
 	add_filter('nav_menu_css_class', 'bp2012_menu_class', 10 , 2);
 
+	register_nav_menus( 'main_menu' );
 
 	/**
 	 * Images

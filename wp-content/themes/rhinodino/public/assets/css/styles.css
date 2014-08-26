@@ -186,7 +186,7 @@ strong {
   position: relative;
   margin: 0 auto;
   padding-left: 30px;
-  max-width: 1090px;
+  max-width: 1210px;
   min-width: 290px;
 }
 .container:after {
@@ -293,29 +293,30 @@ a {
 }
 .logo {
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 15px;
+  padding-top: 60px;
+  padding-bottom: 30px;
 }
 .main-menu {
   list-style: none;
   margin: 0px;
   padding-left: 0px;
 }
-.main-menu-item {
+.menu-item {
   text-align: center;
 }
-.main-menu-item a {
+.menu-item a {
   display: block;
   color: #FFFFFF;
   font-size: 12px;
   line-height: 3.5em;
   text-transform: uppercase;
 }
-.main-menu-item a:hover {
+.menu-item a:hover {
   background-color: #222222;
 }
 #main {
   margin-left: 200px;
+  max-width: 1240px;
 }
 #header {
   padding: 90px;
@@ -346,6 +347,14 @@ a {
   padding-right: 30px;
   width: 50%;
   padding-right: 0px;
+  padding-top: 35%;
+  overflow: hidden;
+}
+.portfolio-item-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 html,
 body {
