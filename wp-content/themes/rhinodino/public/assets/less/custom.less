@@ -1,15 +1,15 @@
 // Grid-less
 @import 'grid.pack.less';
 @import 'elements.less';
-@import url('http://fonts.googleapis.com/css?family=Oswald:300,400,700|Ubuntu:400italic,700italic,400,700');
+//@import url('http://fonts.googleapis.com/css?family=Oswald:300,400,700|Ubuntu:400italic,700italic,400,700');
 
 @max-width: 1240px;
 
-@baseFontFamily:    		Helvetica, sans-serif;
+@baseFontFamily:    		'museo', Helvetica, sans-serif;
 @baseFontWeight: 			400;
-@baseFontSize: 				16;
-@baseLine:        			21;
-@headingsFontFamily:    	Helvetica, sans-serif;
+@baseFontSize: 				15;
+@baseLine:        			23;
+@headingsFontFamily:    	'museo-sans', Helvetica, sans-serif;
 @headingsFontWeight:    	400;
 @h1FontSizeMultiplier: 		2;
 @h2FontSizeMultiplier: 		1.6;
@@ -17,6 +17,35 @@
 @sidebarWidth: 				200px;
 
 @baseLinkColor:				#7834BB;
+
+
+@h1-font-size: 44px;
+@h1-line: 24px;
+@h1-lines: 2;
+@h1-line-height: @h1-line * @h1-lines;
+@h1-margin-top: 2 * @h1-line;
+@h1-margin-bottom: 1 * @h1-line;
+
+@h2-font-size: 31px;
+@h2-line: 24px;
+@h2-lines: 2;
+@h2-line-height: @h2-line * @h2-lines;
+@h2-margin-top: 2 * @h2-line;
+@h2-margin-bottom: 1 * @h2-line;
+
+@h3-font-size: 22px;
+@h3-line: 24px;
+@h3-lines: 1;
+@h3-line-height: @h3-line * @h3-lines;
+@h3-margin-top: 1 * @h3-line;
+@h3-margin-bottom: 1 * @h3-line;
+
+@h4-font-size: 16px;
+@h4-line: 24px;
+@h4-lines: 1;
+@h4-line-height: @h4-line * @h4-lines;
+@h4-margin-top: 1 * @h4-line;
+@h4-margin-bottom: 1 * @h4-line;
 
 
 //MIXINS
@@ -76,27 +105,47 @@
 }
 
 
-body 									{margin: 0px; background-color: #F2F2F2; font-family: Helvetica, sans-serif}
+body 									{margin: 0px; background-color: #2A2A2A; color: #555555; font-family: @baseFontFamily;}
 a 										{text-decoration: none;}
+h1 										{font-size: @h1-font-size; line-height: @h1-line-height; margin-top: @h1-margin-top; margin-bottom: @h1-margin-bottom;}
+h2 										{font-size: @h2-font-size; line-height: @h2-line-height; margin-top: @h2-margin-top; margin-bottom: @h2-margin-bottom; font-weight: 300;}
+h3 										{font-size: @h3-font-size; line-height: @h3-line-height; margin-top: @h3-margin-top; margin-bottom: @h3-margin-bottom; font-weight: 300; text-transform: uppercase;}
+h4 										{font-size: @h4-font-size; line-height: @h4-line-height; margin-top: @h4-margin-top; margin-bottom: @h4-margin-bottom; font-weight: 900; text-transform: uppercase;}
+blockquote 								{margin-left: 2em; padding-left: 1em; border-left: 3px solid #CCCCCC; font-style: italic;}
+
 		
 #sidebar 								{position: fixed; top: 0px; left: 0px; width: @sidebarWidth; height: 100%; background-color: #2A2A2A;}
 .logo 									{text-align: center; .paddingTop(2); .paddingBottom();}
-.main-menu								{list-style: none; margin: 0px; padding-left: 0px;}
+.main-menu								{list-style: none; margin: 0px; padding-left: 0px; font-family: @headingsFontFamily;}
 .menu-item 								{text-align: center;}
 .menu-item a 							{display: block; color: #FFFFFF; font-size: 12px; line-height: 3.5em; text-transform: uppercase;}
 .menu-item a:hover 						{background-color: #222222;}
-#main 									{margin-left: @sidebarWidth; max-width: @max-width;}
+.sidebar-widgets 						{position: absolute; bottom: @gutter; width: 100%; font-size: 12px; color: #FFFFFF; text-align: center;}
+.sidebar-widgets a 						{color: #FFFFFF;}
+.sidebar-widgets a:hover 				{color: @baseLinkColor;}
+#main 									{min-height: 100%; margin-left: @sidebarWidth; max-width: @max-width; background-color: #F2F2F2;}
 		
 #header 								{.paddingBox(3); text-align: center;}
 .homepage-header 						{background-image: url('../img/png/bg_homepage_header.png'); background-position: center; color: #FFFFFF;}
-#header h1 								{margin-top: 0px; font-size: 3.5em; color: #FFFFFF; font-weight: 700;}
+#header h1 								{margin-top: 0px; font-size: 4.5em; line-height: 1em; color: #FFFFFF; font-weight: 100;}
 #header p 								{.paddingLeft(2); .paddingRight(2); line-height: 1.5em;}
 
+#content 								{background-color: #F2F2F2; .clearfix();}
+.homepage-portfolio .portfolio-item 	{.col(50.00%); padding-right: 0px; padding-top: 35%; overflow: hidden; background-size: 100%; background-position: center; background-repeat: no-repeat; .transition(0.2s, ease-in-out);}
+.portfolio-item-inner 					{position: absolute; top: 0; height: 100%; left: 0; right: 0; text-align: center;}
+.portfolio-item-logo,
+.portfolio-item-title,
+.portfolio-item-toggle 					{.col(); float: none; display: inline-block; margin-left: -5px; vertical-align: middle; .paddingLeft(2); .paddingRight(2);}
+.portfolio-item-align-helper 			{display: inline-block; height: 100%; vertical-align: middle;}
+.portfolio-item-inner img 				{max-width: 100%; height: auto;}
+.portfolio-item-inner h2 				{margin-top: 0px; color: #FFFFFF; font-size: 2em; line-height: 1em; margin-bottom: 0.5em; text-transform: uppercase; font-weight: 900; text-shadow: 0px 2px 2px rgba(0,0,0,0.2);}
+.portfolio-item-toggle 					{display: none;}
+.portfolio-item-link 					{color: #FFFFFF;}
+.portfolio-item-subtitle  				{margin-top: 0.5em; font-size: 18px; font-style: italic; text-shadow: 0px 2px 2px rgba(0,0,0,0.2);}
 
-.homepage-portfolio .portfolio-item 	{.col(50.00%); padding-right: 0px; padding-top: 35%; overflow: hidden;}
-.portfolio-item-inner 					{position: absolute; left: 0; right: 0; text-align: center;}
-
-
+.portfolio-item:hover 					{background-size: 200%;}
+.portfolio-item:hover .portfolio-item-logo {display: none;}
+.portfolio-item:hover .portfolio-item-toggle {display: inline-block;}
 
 html, body 								{height: 100%;}
 .landing-page 							{width: 100%; height: 100%; background-color: #B3D7DC; background-image: url('../img/png/pattern_bg_100.png');}
@@ -104,5 +153,13 @@ html, body 								{height: 100%;}
 .landing-page-text 						{font-family: @headingsFontFamily; }
 
 
+#header.page-header h1 					{font-size: 4.5em; text-transform: uppercase; color: #2A2A2A; letter-spacing: -2px;}
+.page-content 							{margin: 0 auto; max-width: 600px; .paddingBox(2);}
 
 
+/*
+Portfolio
+ */
+.single-portfolio-header 				{background-position: center;}
+.portfolio-gallery 						{.col(); .paddingBox(2); padding-bottom: 0px; background-color: #E8E8E8; text-align: center;}
+.portfolio-gallery img 					{max-width: 100%; height: auto; .marginBottom(2);}

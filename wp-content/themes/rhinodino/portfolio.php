@@ -1,10 +1,9 @@
+<?php //Template Name: Portfolio ?>
 <?php get_header(); ?>
 
 	<div id="main">
-		<?php $hero_image = get_field('hero_image', 'option'); ?>
-		<?php $hero_content = get_field('hero_text', 'option'); ?>
-		<header id="header" class="homepage-header" style="background-image: url(<?php echo $hero_image['sizes']['hero']; ?>) ">
-			<?php echo $hero_content; ?>
+		<header id="header" class="page-header">
+			<h1><?php the_title(); ?></h1>
 		</header>
 
 		<section id="content" class="homepage-portfolio">
@@ -12,7 +11,7 @@
 				$args = array(
 					'post_type' => 'portfolio',
 					'post_status' => 'publish',
-					'posts_per_page' => 4
+					'posts_per_page' => -1
 				); 
 
 				$posts = new WP_Query($args);

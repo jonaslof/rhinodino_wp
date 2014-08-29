@@ -74,5 +74,20 @@
 		register_post_type( 'portfolio', $args );
 	}
 	add_action( 'init', 'custom_post_type' );
+
+
+	/**
+	 * Sidebars
+	 */
+	
+	$args = array(
+		'name'          => 'Sidebar bottom',
+		'id'            => 'sidebar-bottom',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '' 
+	);
+	register_sidebar( $args );
 	
 ?>

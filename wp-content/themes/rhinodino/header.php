@@ -15,6 +15,10 @@
 	
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
+	<!-- typekit -->
+	<script type="text/javascript" src="//use.typekit.net/wnt0uga.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	
 	<!--[if IE]>
 		<script src="<?php bloginfo('template_directory'); ?>/js/modernizr.custom.86772.js"></script>
@@ -37,4 +41,10 @@
 			<a href="<?php echo get_bloginfo('siteurl'); ?>" title="Rhino Dino"><img src="<?php echo get_bloginfo('template_directory'); ?>/public/assets/img/svg/general/logo_v1_white.svg" alt="Rhino Dino logo"></a>
 		</div>
 		<?php bp2012_main_menu('Huvudmeny'); ?>
+
+		<div class="sidebar-widgets">
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+				<?php dynamic_sidebar('sidebar-bottom'); ?>
+			<?php endif; ?>
+		</div>
 	</aside>
