@@ -29,13 +29,6 @@
 </head>
 <body <?php body_class(); ?>>
 
-
-	
-	<header id="site-header">
-		<hgroup class="page-header">
-		</hgroup>
-	</header>
-
 	<aside id="sidebar" class="sidebar">
 		<div class="logo">
 			<a href="<?php echo get_bloginfo('siteurl'); ?>" title="Rhino Dino"><img src="<?php echo get_bloginfo('template_directory'); ?>/public/assets/img/svg/general/logo_v1_white.svg" alt="Rhino Dino logo"></a>

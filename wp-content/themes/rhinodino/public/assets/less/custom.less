@@ -91,6 +91,14 @@
 	box-sizing: border-box;
 }
 
+.blur(@radius: 5px) {
+	-webkit-filter: blur(@radius);
+	-moz-filter: blur(@radius);
+	-o-filter: blur(@radius);
+	-ms-filter: blur(@radius);
+	filter: blur(@radius);
+}
+
 .homepageGradient() {
 	background: #fbb042; /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -125,8 +133,11 @@ blockquote 								{margin-left: 2em; padding-left: 1em; border-left: 3px solid 
 .sidebar-widgets a:hover 				{color: @baseLinkColor;}
 #main 									{min-height: 100%; margin-left: @sidebarWidth; max-width: @max-width; background-color: #F2F2F2;}
 		
-#header 								{.paddingBox(3); text-align: center;}
-.homepage-header 						{background-image: url('../img/png/bg_homepage_header.png'); background-position: center; color: #FFFFFF;}
+#header 								{text-align: center;}
+.homepage-header 						{.paddingBox(3); background-image: url('../img/png/bg_homepage_header.png'); background-position: center; color: #FFFFFF;}
+.portfolio-header,
+.single-portfolio-header 				{.paddingBox(3);}
+.page-header 							{.paddingTop(3); .paddingLeft(3); .paddingRight(3);}
 #header h1 								{margin-top: 0px; font-size: 4.5em; line-height: 1em; color: #FFFFFF; font-weight: 100;}
 #header p 								{.paddingLeft(2); .paddingRight(2); line-height: 1.5em;}
 
@@ -138,12 +149,12 @@ blockquote 								{margin-left: 2em; padding-left: 1em; border-left: 3px solid 
 .portfolio-item-toggle 					{.col(); float: none; display: inline-block; margin-left: -5px; vertical-align: middle; .paddingLeft(2); .paddingRight(2);}
 .portfolio-item-align-helper 			{display: inline-block; height: 100%; vertical-align: middle;}
 .portfolio-item-inner img 				{max-width: 100%; height: auto;}
-.portfolio-item-inner h2 				{margin-top: 0px; color: #FFFFFF; font-size: 2em; line-height: 1em; margin-bottom: 0.5em; text-transform: uppercase; font-weight: 900; text-shadow: 0px 2px 2px rgba(0,0,0,0.2);}
+.portfolio-item-inner h2 				{margin-top: 0px; color: #FFFFFF; font-size: 2em; line-height: 1em; margin-bottom: 0.5em; text-transform: uppercase; font-weight: 900; text-shadow: 0px 2px 4px rgba(0,0,0,0.3);}
 .portfolio-item-toggle 					{display: none;}
 .portfolio-item-link 					{color: #FFFFFF;}
-.portfolio-item-subtitle  				{margin-top: 0.5em; font-size: 18px; font-style: italic; text-shadow: 0px 2px 2px rgba(0,0,0,0.2);}
+.portfolio-item-subtitle  				{margin-top: 0.5em; font-size: 18px; font-style: italic; text-shadow: 0px 2px 4px rgba(0,0,0,0.3);}
 
-.portfolio-item:hover 					{background-size: 200%;}
+.portfolio-item:hover 					{background-size: 130%;}
 .portfolio-item:hover .portfolio-item-logo {display: none;}
 .portfolio-item:hover .portfolio-item-toggle {display: inline-block;}
 
@@ -153,7 +164,7 @@ html, body 								{height: 100%;}
 .landing-page-text 						{font-family: @headingsFontFamily; }
 
 
-#header.page-header h1 					{font-size: 4.5em; text-transform: uppercase; color: #2A2A2A; letter-spacing: -2px;}
+#header.text-header h1 					{font-size: 4.5em; text-transform: uppercase; color: #2A2A2A; letter-spacing: -2px;}
 .page-content 							{margin: 0 auto; max-width: 600px; .paddingBox(2);}
 
 

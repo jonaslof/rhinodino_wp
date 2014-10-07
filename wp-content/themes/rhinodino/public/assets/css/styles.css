@@ -371,13 +371,22 @@ blockquote {
   background-color: #F2F2F2;
 }
 #header {
-  padding: 90px;
   text-align: center;
 }
 .homepage-header {
+  padding: 90px;
   background-image: url('../img/png/bg_homepage_header.png');
   background-position: center;
   color: #FFFFFF;
+}
+.portfolio-header,
+.single-portfolio-header {
+  padding: 90px;
+}
+.page-header {
+  padding-top: 90px;
+  padding-left: 90px;
+  padding-right: 90px;
 }
 #header h1 {
   margin-top: 0px;
@@ -460,7 +469,7 @@ blockquote {
   margin-bottom: 0.5em;
   text-transform: uppercase;
   font-weight: 900;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .portfolio-item-toggle {
   display: none;
@@ -472,10 +481,10 @@ blockquote {
   margin-top: 0.5em;
   font-size: 18px;
   font-style: italic;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .portfolio-item:hover {
-  background-size: 200%;
+  background-size: 130%;
 }
 .portfolio-item:hover .portfolio-item-logo {
   display: none;
@@ -502,7 +511,7 @@ body {
 .landing-page-text {
   font-family: 'museo-sans', Helvetica, sans-serif;
 }
-#header.page-header h1 {
+#header.text-header h1 {
   font-size: 4.5em;
   text-transform: uppercase;
   color: #2A2A2A;

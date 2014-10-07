@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 
 	<div id="main">
-		<header id="header" class="page-header">
+		<header id="header" class="portfolio-header text-header">
 			<h1><?php the_title(); ?></h1>
 		</header>
 
